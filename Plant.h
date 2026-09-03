@@ -33,8 +33,8 @@ public:
 
     virtual ~Plant();
 protected:
-    char* produce = nullptr;
-    char* sort = nullptr;
+    char* produce;
+    char* sort;
     unsigned int height;
 
 private:
