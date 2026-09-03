@@ -2,8 +2,24 @@
 
 Plant::Plant(const char* p, const char* s, const unsigned int h, const Type t) : height(h), type(t)
 {
-    setProduce(p);
-    setSort(s);
+    if (!p) throw std::logic_error("produce is null");
+    if (!s) throw std::logic_error("sort is null");
+
+    char* produceCopy = new char[strlen(p) + 1];
+    strcpy(produceCopy, p);
+    char* sortCopy;
+
+    try {
+        sortCopy = new char[strlen(s) + 1];
+        strcpy(sortCopy, s);
+    } catch (...) {
+        delete[] produceCopy;
+        throw;
+    }
+
+    this->produce = produceCopy;
+    this->sort = sortCopy;
+    
 }
 
 Plant::Plant(const Plant& other) : Plant(other.produce, other.sort, other.height,other.type) {}
