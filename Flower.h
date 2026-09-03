@@ -4,7 +4,7 @@
 #pragma once
 #include "Plant.h"
 
-inline char* months[12] = {"Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"};
+const char* months[12] = {"Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"};
 
 class Flower : public Plant
 {
